@@ -1865,6 +1865,7 @@ evutil_vsnprintf(char *buf, size_t buflen, const char *format, va_list ap)
 	if (!buflen)
 		return 0;
 #if defined(_MSC_VER) || defined(_WIN32)
+#if (defined(_MSC_VER) && _MSC_VER < 1900) || (defined(WIN32) && (!defined(__USE_MINGW_ANSI_STDIO) || (__USE_MINGW_ANSI_STDIO + 0) == 0))
 	r = _vsnprintf(buf, buflen, format, ap);
 	if (r < 0)
 		r = _vscprintf(format, ap);
