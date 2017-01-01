@@ -100,6 +100,7 @@ PLATFORM_DEPENDENT_SRC = \
 	arc4random.c
 
 EXTRA_DIST = \
+	CMakeLists.txt \
 	LICENSE \
 	autogen.sh \
 	event_rpcgen.py \
